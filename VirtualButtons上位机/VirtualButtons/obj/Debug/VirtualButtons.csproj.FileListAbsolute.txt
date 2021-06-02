@@ -1,0 +1,20 @@
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\bin\Debug\VirtualButtons.exe.config
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\bin\Debug\VirtualButtons.exe
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\bin\Debug\VirtualButtons.pdb
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\obj\Debug\VirtualButtons.csprojAssemblyReference.cache
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\obj\Debug\VirtualButtons.Form1.resources
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\obj\Debug\VirtualButtons.Properties.Resources.resources
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\obj\Debug\VirtualButtons.csproj.GenerateResource.cache
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\obj\Debug\VirtualButtons.csproj.CoreCompileInputs.cache
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\obj\Debug\VirtualButtons.exe
+C:\Users\efran\Desktop\Professional Experiment_efran\final_design\单片机实验上位机\VirtualButtons\VirtualButtons\obj\Debug\VirtualButtons.pdb
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\bin\Debug\VirtualButtons.exe.config
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\bin\Debug\VirtualButtons.exe
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\bin\Debug\VirtualButtons.pdb
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\obj\Debug\VirtualButtons.csprojAssemblyReference.cache
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\obj\Debug\VirtualButtons.Form1.resources
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\obj\Debug\VirtualButtons.Properties.Resources.resources
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\obj\Debug\VirtualButtons.csproj.GenerateResource.cache
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\obj\Debug\VirtualButtons.csproj.CoreCompileInputs.cache
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\obj\Debug\VirtualButtons.exe
+C:\Users\efran\Desktop\virtualbutton\Efran-github\virtualbutton\VirtualButtons上位机\VirtualButtons\obj\Debug\VirtualButtons.pdb

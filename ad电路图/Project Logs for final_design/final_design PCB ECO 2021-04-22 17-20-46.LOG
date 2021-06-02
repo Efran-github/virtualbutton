@@ -1,0 +1,9 @@
+Added Component: Designator=S17(Button-4feet)
+Added Component: Designator=S18(Button-4feet)
+Added Pin To Net: NetName=GND Pin=S17-2
+Added Pin To Net: NetName=INT0 Pin=S17-4
+Added Pin To Net: NetName=+5 Pin=S18-1
+Added Pin To Net: NetName=NetR10_2 Pin=S18-4
+Added Member To Class: ClassName=final_design Member=Component S17 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S18 Button-4feet
+Added Room: Name=final_design

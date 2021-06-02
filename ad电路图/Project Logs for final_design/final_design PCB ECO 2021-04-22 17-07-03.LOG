@@ -1,0 +1,85 @@
+Added Component: Designator=S3(Button-4feet)
+Added Component: Designator=S4(Button-4feet)
+Added Component: Designator=S5(Button-4feet)
+Added Component: Designator=S6(Button-4feet)
+Added Component: Designator=S7(Button-4feet)
+Added Component: Designator=S8(Button-4feet)
+Added Component: Designator=S9(Button-4feet)
+Added Component: Designator=S10(Button-4feet)
+Added Component: Designator=S11(Button-4feet)
+Added Component: Designator=S12(Button-4feet)
+Added Component: Designator=S13(Button-4feet)
+Added Component: Designator=S14(Button-4feet)
+Added Component: Designator=S15(Button-4feet)
+Added Component: Designator=S16(Button-4feet)
+Added Pin To Net: NetName=NetR3_1 Pin=S3-1
+Added Pin To Net: NetName=NetS3_2 Pin=S3-2
+Added Pin To Net: NetName=NetS2_4 Pin=S3-3
+Added Pin To Net: NetName=NetS3_4 Pin=S3-4
+Added Pin To Net: NetName=NetR4_1 Pin=S4-1
+Added Pin To Net: NetName=NetS4_2 Pin=S4-2
+Added Pin To Net: NetName=NetS3_4 Pin=S4-3
+Added Pin To Net: NetName=NetR5_2 Pin=S4-4
+Added Pin To Net: NetName=NetS1_2 Pin=S5-1
+Added Pin To Net: NetName=NetS5_2 Pin=S5-2
+Added Pin To Net: NetName=P1.1 Pin=S5-3
+Added Pin To Net: NetName=NetS5_4 Pin=S5-4
+Added Pin To Net: NetName=NetS2_2 Pin=S6-1
+Added Pin To Net: NetName=NetS6_2 Pin=S6-2
+Added Pin To Net: NetName=NetS5_4 Pin=S6-3
+Added Pin To Net: NetName=NetS6_4 Pin=S6-4
+Added Pin To Net: NetName=NetS3_2 Pin=S7-1
+Added Pin To Net: NetName=NetS7_2 Pin=S7-2
+Added Pin To Net: NetName=NetS6_4 Pin=S7-3
+Added Pin To Net: NetName=NetS7_4 Pin=S7-4
+Added Pin To Net: NetName=NetS4_2 Pin=S8-1
+Added Pin To Net: NetName=NetS8_2 Pin=S8-2
+Added Pin To Net: NetName=NetS7_4 Pin=S8-3
+Added Pin To Net: NetName=NetR6_2 Pin=S8-4
+Added Pin To Net: NetName=NetS5_2 Pin=S9-1
+Added Pin To Net: NetName=NetS9_2 Pin=S9-2
+Added Pin To Net: NetName=P1.2 Pin=S9-3
+Added Pin To Net: NetName=NetS9_4 Pin=S9-4
+Added Pin To Net: NetName=NetS6_2 Pin=S10-1
+Added Pin To Net: NetName=NetS10_2 Pin=S10-2
+Added Pin To Net: NetName=NetS9_4 Pin=S10-3
+Added Pin To Net: NetName=NetS10_4 Pin=S10-4
+Added Pin To Net: NetName=NetS7_2 Pin=S11-1
+Added Pin To Net: NetName=NetS11_2 Pin=S11-2
+Added Pin To Net: NetName=NetS10_4 Pin=S11-3
+Added Pin To Net: NetName=NetS11_4 Pin=S11-4
+Added Pin To Net: NetName=NetS8_2 Pin=S12-1
+Added Pin To Net: NetName=NetS12_2 Pin=S12-2
+Added Pin To Net: NetName=NetS11_4 Pin=S12-3
+Added Pin To Net: NetName=NetR7_2 Pin=S12-4
+Added Pin To Net: NetName=NetS9_2 Pin=S13-1
+Added Pin To Net: NetName=P1.4 Pin=S13-2
+Added Pin To Net: NetName=P1.3 Pin=S13-3
+Added Pin To Net: NetName=NetS13_4 Pin=S13-4
+Added Pin To Net: NetName=NetS10_2 Pin=S14-1
+Added Pin To Net: NetName=P1.5 Pin=S14-2
+Added Pin To Net: NetName=NetS13_4 Pin=S14-3
+Added Pin To Net: NetName=NetS14_4 Pin=S14-4
+Added Pin To Net: NetName=NetS11_2 Pin=S15-1
+Added Pin To Net: NetName=P1.6 Pin=S15-2
+Added Pin To Net: NetName=NetS14_4 Pin=S15-3
+Added Pin To Net: NetName=NetS15_4 Pin=S15-4
+Added Pin To Net: NetName=NetS12_2 Pin=S16-1
+Added Pin To Net: NetName=P1.7 Pin=S16-2
+Added Pin To Net: NetName=NetS15_4 Pin=S16-3
+Added Pin To Net: NetName=NetR8_2 Pin=S16-4
+Added Member To Class: ClassName=final_design Member=Component S3 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S4 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S5 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S6 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S7 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S8 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S9 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S10 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S11 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S12 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S13 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S14 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S15 Button-4feet
+Added Member To Class: ClassName=final_design Member=Component S16 Button-4feet
+Added Room: Name=final_design

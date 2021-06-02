@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=P1.0 Pin=S1-3
+Removed Pin From Net: NetName=P1.1 Pin=S5-3
+Removed Pin From Net: NetName=P1.2 Pin=S9-3
+Removed Pin From Net: NetName=P1.4 Pin=S13-2
+Removed Pin From Net: NetName=P1.3 Pin=S13-3
+Removed Pin From Net: NetName=P1.5 Pin=S14-2
+Removed Pin From Net: NetName=P1.6 Pin=S15-2
+Removed Pin From Net: NetName=P1.7 Pin=S16-2
+Added Pin To Net: NetName=P1.7 Pin=S1-3
+Added Pin To Net: NetName=P1.6 Pin=S5-3
+Added Pin To Net: NetName=P1.5 Pin=S9-3
+Added Pin To Net: NetName=P1.3 Pin=S13-2
+Added Pin To Net: NetName=P1.4 Pin=S13-3
+Added Pin To Net: NetName=P1.2 Pin=S14-2
+Added Pin To Net: NetName=P1.1 Pin=S15-2
+Added Pin To Net: NetName=P1.0 Pin=S16-2
+Added Room: Name=final_design

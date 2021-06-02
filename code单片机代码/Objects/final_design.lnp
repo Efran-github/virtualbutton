@@ -1,0 +1,7 @@
+".\Objects\STARTUP.obj",
+".\Objects\delay.obj",
+".\Objects\final_design.obj",
+".\Objects\KeyScan.obj",
+".\Objects\InterruptInit.obj" 
+TO ".\Objects\final_design" 
+PRINT(".\Listings\final_design.m51") RAMSIZE(256) 

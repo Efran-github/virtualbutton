@@ -1,0 +1,73 @@
+C51 COMPILER V9.60.0.0   FINAL_DESIGN                                                      05/30/2021 19:16:10 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE FINAL_DESIGN
+OBJECT MODULE PLACED IN .\Objects\final_design.obj
+COMPILER INVOKED BY: G:\Keil_v5\C51\BIN\C51.EXE final_design.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listi
+                    -ngs\final_design.lst) TABS(2) OBJECT(.\Objects\final_design.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          #include "delay.h"
+   3          #include "KeyScan.h"
+   4          #include "InterruptInit.h"
+   5          
+   6          #define uint unsigned int 
+   7          #define uchar unsigned char 
+   8          uchar _switchFunc=0;
+   9          extern uchar _keyClick; //键盘按下标志
+  10          uchar _keyNum;//键盘按下数值
+  11          uchar code _displayNum[16]={0x77,0x41,0x3b,0x6b,0x4d,0x6e,0x7e,0x43,0x7f,0x6f,0X5f,0X7c,0X36,0X79,0X3e,0X1
+             -e};  //共阴数码管显示数字0-F
+  12          uchar code _displayFunc[2]={0x77,0x08};//共阴数码管显示功能状态
+  13          
+  14          void main(){
+  15   1        P0=_displayFunc[0];
+  16   1        delay(500);
+  17   1        ExternalIptInit();
+  18   1        SerialPortInit();
+  19   1        while(1){
+  20   2          _keyNum=KeyScan();
+  21   2          if(_keyClick==1){
+  22   3            if(_switchFunc==0){
+  23   4              P0=_displayNum[_keyNum];
+  24   4            }//按键显示
+  25   3            else{
+  26   4              SerialPortSend(_keyNum);
+  27   4            }//串口遥控电脑
+  28   3          }
+  29   2          delay(10);
+  30   2        }
+  31   1        
+  32   1      }//主程序函数
+  33          
+  34          void SwitchFunc() interrupt 0{
+  35   1        if(_switchFunc==0){
+  36   2          _switchFunc=1;
+  37   2          P0=_displayFunc[1];
+  38   2          delay(10);
+  39   2        }
+  40   1        else{
+  41   2          _switchFunc=0;
+  42   2          P0=_displayFunc[0];
+  43   2          delay(10);
+  44   2        }
+  45   1      }//外部中断0触发
+  46          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    143    ----
+   CONSTANT SIZE    =     18    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.0.0   FINAL_DESIGN                                                      05/30/2021 19:16:10 PAGE 2   
+
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

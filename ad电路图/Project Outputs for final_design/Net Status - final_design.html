@@ -1,0 +1,548 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Net Status Report</title>
+</head>
+<body onload="document.getElementById('radio_mil').click()"><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Net Status Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2021-05-18</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">21:22:07</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc" class="file"><acronym title="C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc">C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc</acronym></a></td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Units:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">
+<form><input type="radio" name="radio_units" id="radio_mm" onclick="changeUnits(this, 'mm')">mm<input type="radio" name="radio_units" id="radio_mil" onclick="changeUnits(this, 'mil')">mils</form>
+</td>
+</tr>
+</table><a name="ID5IIJXYURTS0OK23XGDTITVJXUKSOFD403OMDKMMXMKEBCPVIWU5N"><table>
+<tr>
+<th class="column1">Nets</th>
+<th class="column2">Layer</th>
+<th class="column3">Length</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=729.18mil|Location2.X=3802.18mil|Location1.Y=834.327mil|Location2.Y=5569.382mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=729.18mil|Location2.X=3802.18mil|Location1.Y=834.327mil|Location2.Y=5569.382mil|Absolute=True">+5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="141260742">14126.074mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3119.08mil|Location2.X=3681.793mil|Location1.Y=4451.64mil|Location2.Y=4742.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3119.08mil|Location2.X=3681.793mil|Location1.Y=4451.64mil|Location2.Y=4742.133mil|Absolute=True">COM</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="6534256">653.426mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.087mil|Location2.X=3746.3mil|Location1.Y=3472.38mil|Location2.Y=5469.382mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=819.087mil|Location2.X=3746.3mil|Location1.Y=3472.38mil|Location2.Y=5469.382mil|Absolute=True">GND</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="72182554">7218.255mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1052.767mil|Location2.X=1989.593mil|Location1.Y=3911.8mil|Location2.Y=4413.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1052.767mil|Location2.X=1989.593mil|Location1.Y=3911.8mil|Location2.Y=4413.033mil|Absolute=True">INT0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="15023302">1502.33mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1209.087mil|Location2.X=1989.593mil|Location1.Y=4394.49mil|Location2.Y=4713.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1209.087mil|Location2.X=1989.593mil|Location1.Y=4394.49mil|Location2.Y=4713.033mil|Absolute=True">NetC1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="9490345">949.035mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.707mil|Location2.X=1989.593mil|Location1.Y=3734.167mil|Location2.Y=3820.579mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1207.707mil|Location2.X=1989.593mil|Location1.Y=3734.167mil|Location2.Y=3820.579mil|Absolute=True">NetC2_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7068192">706.819mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1205.167mil|Location2.X=1989.593mil|Location1.Y=3544.507mil|Location2.Y=3713.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1205.167mil|Location2.X=1989.593mil|Location1.Y=3544.507mil|Location2.Y=3713.033mil|Absolute=True">NetC3_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7754321">775.432mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=867.347mil|Location2.X=1007.173mil|Location1.Y=2857.501mil|Location2.Y=3244.913mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=867.347mil|Location2.X=1007.173mil|Location1.Y=2857.501mil|Location2.Y=3244.913mil|Absolute=True">NetR1_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3337966">333.797mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1561.927mil|Location2.X=1723.453mil|Location1.Y=2854.961mil|Location2.Y=3239.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1561.927mil|Location2.X=1723.453mil|Location1.Y=2854.961mil|Location2.Y=3239.833mil|Absolute=True">NetR2_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3402450">340.245mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2257.887mil|Location2.X=2407.347mil|Location1.Y=2848.547mil|Location2.Y=3249.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2257.887mil|Location2.X=2407.347mil|Location1.Y=2848.547mil|Location2.Y=3249.993mil|Absolute=True">NetR3_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3518212">351.821mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2952.687mil|Location2.X=3117.913mil|Location1.Y=2842.261mil|Location2.Y=3249.993mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2952.687mil|Location2.X=3117.913mil|Location1.Y=2842.261mil|Location2.Y=3249.993mil|Absolute=True">NetR4_1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3646376">364.638mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3294.952mil|Location2.X=3704.653mil|Location1.Y=2566.607mil|Location2.Y=2743.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3294.952mil|Location2.X=3704.653mil|Location1.Y=2566.607mil|Location2.Y=2743.961mil|Absolute=True">NetR5_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3716298">371.63mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3305.113mil|Location2.X=3714.813mil|Location1.Y=1840.167mil|Location2.Y=2006.028mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3305.113mil|Location2.X=3714.813mil|Location1.Y=1840.167mil|Location2.Y=2006.028mil|Absolute=True">NetR6_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3710772">371.077mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3315.273mil|Location2.X=3719.893mil|Location1.Y=1137.747mil|Location2.Y=1303.782mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3315.273mil|Location2.X=3719.893mil|Location1.Y=1137.747mil|Location2.Y=1303.782mil|Absolute=True">NetR7_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3704305">370.431mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3335.593mil|Location2.X=3724.973mil|Location1.Y=444.327mil|Location2.Y=605.282mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3335.593mil|Location2.X=3724.973mil|Location1.Y=444.327mil|Location2.Y=605.282mil|Absolute=True">NetR8_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3527373">352.737mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1647.762mil|Location2.X=1979.359mil|Location1.Y=696.532mil|Location2.Y=1502.473mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1647.762mil|Location2.X=1979.359mil|Location1.Y=696.532mil|Location2.Y=1502.473mil|Absolute=True">NetS10_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8317592">831.759mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1900.493mil|Location2.X=2442.273mil|Location1.Y=1234.313mil|Location2.Y=1325.308mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1900.493mil|Location2.X=2442.273mil|Location1.Y=1234.313mil|Location2.Y=1325.308mil|Absolute=True">NetS10_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4679383">467.938mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2371.662mil|Location2.X=2698.178mil|Location1.Y=701.612mil|Location2.Y=1492.313mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2371.662mil|Location2.X=2698.178mil|Location1.Y=701.612mil|Location2.Y=1492.313mil|Absolute=True">NetS11_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8144150">814.415mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.312mil|Location2.X=3138.233mil|Location1.Y=1222.947mil|Location2.Y=1315.148mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2619.312mil|Location2.X=3138.233mil|Location1.Y=1222.947mil|Location2.Y=1315.148mil|Absolute=True">NetS11_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4455779">445.578mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3079.687mil|Location2.X=3394.139mil|Location1.Y=703.581mil|Location2.Y=1480.947mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3079.687mil|Location2.X=3394.139mil|Location1.Y=703.581mil|Location2.Y=1480.947mil|Absolute=True">NetS12_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7981869">798.187mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1200.087mil|Location2.X=1726.628mil|Location1.Y=514.287mil|Location2.Y=596.264mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1200.087mil|Location2.X=1726.628mil|Location1.Y=514.287mil|Location2.Y=596.264mil|Absolute=True">NetS13_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4489633">448.963mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1903.667mil|Location2.X=2450.528mil|Location1.Y=519.367mil|Location2.Y=601.345mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1903.667mil|Location2.X=2450.528mil|Location1.Y=519.367mil|Location2.Y=601.345mil|Absolute=True">NetS14_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4692833">469.283mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2627.567mil|Location2.X=3158.553mil|Location1.Y=524.447mil|Location2.Y=603.313mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2627.567mil|Location2.X=3158.553mil|Location1.Y=524.447mil|Location2.Y=603.313mil|Absolute=True">NetS15_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4521200">452.12mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=928.307mil|Location2.X=1263.079mil|Location1.Y=2111.947mil|Location2.Y=2936.367mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=928.307mil|Location2.X=1263.079mil|Location1.Y=2111.947mil|Location2.Y=2936.367mil|Absolute=True">NetS1_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8515534">851.553mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1184.213mil|Location2.X=1723.453mil|Location1.Y=2675.827mil|Location2.Y=2759.202mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1184.213mil|Location2.X=1723.453mil|Location1.Y=2675.827mil|Location2.Y=2759.202mil|Absolute=True">NetS1_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4622420">462.242mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1637.601mil|Location2.X=1979.359mil|Location1.Y=2109.407mil|Location2.Y=2933.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1637.601mil|Location2.X=1979.359mil|Location1.Y=2109.407mil|Location2.Y=2933.827mil|Absolute=True">NetS2_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8555631">855.563mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1900.493mil|Location2.X=2407.347mil|Location1.Y=2669.413mil|Location2.Y=2756.662mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1900.493mil|Location2.X=2407.347mil|Location1.Y=2669.413mil|Location2.Y=2756.662mil|Absolute=True">NetS2_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4314612">431.461mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2353.247mil|Location2.X=2663.253mil|Location1.Y=2109.407mil|Location2.Y=2927.413mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2353.247mil|Location2.X=2663.253mil|Location1.Y=2109.407mil|Location2.Y=2927.413mil|Absolute=True">NetS3_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8348813">834.881mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2584.387mil|Location2.X=3117.913mil|Location1.Y=2663.127mil|Location2.Y=2750.248mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2584.387mil|Location2.X=3117.913mil|Location1.Y=2663.127mil|Location2.Y=2750.248mil|Absolute=True">NetS3_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4580792">458.079mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3049.207mil|Location2.X=3373.818mil|Location1.Y=2104.327mil|Location2.Y=2921.127mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3049.207mil|Location2.X=3373.818mil|Location1.Y=2104.327mil|Location2.Y=2921.127mil|Absolute=True">NetS4_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8397250">839.725mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=941.007mil|Location2.X=1263.079mil|Location1.Y=1423.607mil|Location2.Y=2190.813mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=941.007mil|Location2.X=1263.079mil|Location1.Y=1423.607mil|Location2.Y=2190.813mil|Absolute=True">NetS5_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7931710">793.171mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1184.213mil|Location2.X=1716.467mil|Location1.Y=1930.273mil|Location2.Y=2013.648mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1184.213mil|Location2.X=1716.467mil|Location1.Y=1930.273mil|Location2.Y=2013.648mil|Absolute=True">NetS5_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4552565">455.257mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1644.587mil|Location2.X=1972.373mil|Location1.Y=1423.607mil|Location2.Y=2188.273mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1644.587mil|Location2.X=1972.373mil|Location1.Y=1423.607mil|Location2.Y=2188.273mil|Absolute=True">NetS6_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="7889060">788.906mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1893.507mil|Location2.X=2432.113mil|Location1.Y=1930.273mil|Location2.Y=2011.108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1893.507mil|Location2.X=2432.113mil|Location1.Y=1930.273mil|Location2.Y=2011.108mil|Absolute=True">NetS6_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4605554">460.555mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2363.407mil|Location2.X=2688.019mil|Location1.Y=1413.447mil|Location2.Y=2188.273mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2363.407mil|Location2.X=2688.019mil|Location1.Y=1413.447mil|Location2.Y=2188.273mil|Absolute=True">NetS7_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8033310">803.331mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2609.153mil|Location2.X=3128.073mil|Location1.Y=1925.193mil|Location2.Y=2011.108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2609.153mil|Location2.X=3128.073mil|Location1.Y=1925.193mil|Location2.Y=2011.108mil|Absolute=True">NetS7_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4429741">442.974mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3059.367mil|Location2.X=3383.979mil|Location1.Y=1402.081mil|Location2.Y=2183.193mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3059.367mil|Location2.X=3383.979mil|Location1.Y=1402.081mil|Location2.Y=2183.193mil|Absolute=True">NetS8_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8040372">804.037mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=944.182mil|Location2.X=1275.778mil|Location1.Y=691.452mil|Location2.Y=1502.473mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=944.182mil|Location2.X=1275.778mil|Location1.Y=691.452mil|Location2.Y=1502.473mil|Absolute=True">NetS9_2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8368392">836.839mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1196.912mil|Location2.X=1723.453mil|Location1.Y=1244.473mil|Location2.Y=1325.308mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1196.912mil|Location2.X=1723.453mil|Location1.Y=1244.473mil|Location2.Y=1325.308mil|Absolute=True">NetS9_4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4484899">448.49mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3287.08mil|Location1.Y=4300.42mil|Location2.Y=4813.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3287.08mil|Location1.Y=4300.42mil|Location2.Y=4813.033mil|Absolute=True">NetU1_33</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="12825917">1282.592mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3087.08mil|Location1.Y=4371.54mil|Location2.Y=4913.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3087.08mil|Location1.Y=4371.54mil|Location2.Y=4913.033mil|Absolute=True">NetU1_34</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="10352994">1035.299mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=2987.08mil|Location1.Y=4451.64mil|Location2.Y=5013.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=2987.08mil|Location1.Y=4451.64mil|Location2.Y=5013.033mil|Absolute=True">NetU1_35</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8272870">827.287mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=2987.08mil|Location1.Y=5034.167mil|Location2.Y=5119.64mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=2987.08mil|Location1.Y=5034.167mil|Location2.Y=5119.64mil|Absolute=True">NetU1_36</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="4079072">407.907mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3087.08mil|Location1.Y=5051.64mil|Location2.Y=5213.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3087.08mil|Location1.Y=5051.64mil|Location2.Y=5213.033mil|Absolute=True">NetU1_37</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="5765723">576.572mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3287.08mil|Location1.Y=5051.64mil|Location2.Y=5313.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3287.08mil|Location1.Y=5051.64mil|Location2.Y=5313.033mil|Absolute=True">NetU1_38</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="8433259">843.326mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3387.08mil|Location1.Y=5051.64mil|Location2.Y=5413.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.727mil|Location2.X=3387.08mil|Location1.Y=5051.64mil|Location2.Y=5413.033mil|Absolute=True">NetU1_39</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="10606856">1060.686mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=124.66mil|Location2.X=3414.459mil|Location1.Y=132.28mil|Location2.Y=5513.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=124.66mil|Location2.X=3414.459mil|Location1.Y=132.28mil|Location2.Y=5513.033mil|Absolute=True">P1.0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="102017365">10201.737mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=205.94mil|Location2.X=2706.433mil|Location1.Y=205.94mil|Location2.Y=5413.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=205.94mil|Location2.X=2706.433mil|Location1.Y=205.94mil|Location2.Y=5413.033mil|Absolute=True">P1.1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="91472537">9147.254mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=294.84mil|Location2.X=1989.593mil|Location1.Y=307.54mil|Location2.Y=5313.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=294.84mil|Location2.X=1989.593mil|Location1.Y=307.54mil|Location2.Y=5313.033mil|Absolute=True">P1.2</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="81006190">8100.619mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=340.56mil|Location2.X=1989.593mil|Location1.Y=421.84mil|Location2.Y=5213.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=340.56mil|Location2.X=1989.593mil|Location1.Y=421.84mil|Location2.Y=5213.033mil|Absolute=True">P1.3</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="70703306">7070.331mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=383.74mil|Location2.X=1989.593mil|Location1.Y=512.318mil|Location2.Y=5113.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=383.74mil|Location2.X=1989.593mil|Location1.Y=512.318mil|Location2.Y=5113.033mil|Absolute=True">P1.4</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="63685021">6368.502mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=452.32mil|Location2.X=1989.593mil|Location1.Y=1244.473mil|Location2.Y=5013.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=452.32mil|Location2.X=1989.593mil|Location1.Y=1244.473mil|Location2.Y=5013.033mil|Absolute=True">P1.5</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="54549635">5454.964mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=564.08mil|Location2.X=1989.593mil|Location1.Y=1932.813mil|Location2.Y=4913.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=564.08mil|Location2.X=1989.593mil|Location1.Y=1932.813mil|Location2.Y=4913.033mil|Absolute=True">P1.6</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="44884278">4488.428mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=675.84mil|Location2.X=1989.593mil|Location1.Y=2678.367mil|Location2.Y=4813.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=675.84mil|Location2.X=1989.593mil|Location1.Y=2678.367mil|Location2.Y=4813.033mil|Absolute=True">P1.7</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="35742001">3574.2mils
+			</a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.978mil|Location2.X=1989.593mil|Location1.Y=4422.319mil|Location2.Y=4623.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.978mil|Location2.X=1989.593mil|Location1.Y=4422.319mil|Location2.Y=4623.033mil|Absolute=True">P3.0</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3564359">356.436mils
+			</a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB%E7%94%B5%E8%B7%AF%E5%9B%BE---%E5%8D%95%E5%B1%82%E6%9D%BF\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.978mil|Location2.X=1989.593mil|Location1.Y=4322.319mil|Location2.Y=4513.033mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCB电路图---单层板\final_design\final_design.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.978mil|Location2.X=1989.593mil|Location1.Y=4322.319mil|Location2.Y=4513.033mil|Absolute=True">P3.1</acronym></a></td>
+<td class="column2">Signal Layers Only</td>
+<td class="column3"><a name="coordinate" value="3522938">352.294mils
+			</a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

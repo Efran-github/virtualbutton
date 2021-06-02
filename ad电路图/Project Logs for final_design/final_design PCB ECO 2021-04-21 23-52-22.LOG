@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=NetR1_1 Pin=S1-1
+Added Pin To Net: NetName=NetS1_2 Pin=S1-2
+Added Pin To Net: NetName=P1.0 Pin=S1-3
+Added Pin To Net: NetName=NetS1_4 Pin=S1-4
+Added Member To Class: ClassName=final_design Member=Component S1 Button-4feet
+Added Room: Name=final_design

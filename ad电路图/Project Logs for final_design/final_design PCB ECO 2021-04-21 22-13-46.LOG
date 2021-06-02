@@ -1,0 +1,35 @@
+Removed Pin From Net: NetName=+5 Pin=DS1-1
+Removed Pin From Net: NetName=+5 Pin=DS1-6
+Removed Pin From Net: NetName=NetDS1_10 Pin=R9-1
+Removed Pin From Net: NetName=NetDS1_9 Pin=R10-1
+Removed Pin From Net: NetName=NetDS1_8 Pin=R11-1
+Removed Pin From Net: NetName=NetDS1_5 Pin=R12-1
+Removed Pin From Net: NetName=NetDS1_4 Pin=R13-1
+Removed Pin From Net: NetName=NetDS1_2 Pin=R14-1
+Removed Pin From Net: NetName=NetDS1_3 Pin=R15-1
+Removed Pin From Net: NetName=NetDS1_7 Pin=R16-1
+Removed Member From Class: ClassName=final_design Member=R13
+Removed Member From Class: ClassName=final_design Member=R14
+Removed Member From Class: ClassName=final_design Member=R15
+Removed Member From Class: ClassName=final_design Member=R16
+Removed Member From Class: ClassName=final_design Member=R17
+Removed Member From Class: ClassName=final_design Member=R18
+Removed Member From Class: ClassName=final_design Member=R19
+Change Component Designator: OldDesignator=R17 NewDesignator=R12
+Change Component Designator: OldDesignator=R18 NewDesignator=R10
+Change Component Designator: OldDesignator=R19 NewDesignator=R11
+Added Pin To Net: NetName=+5 Pin=R9-1
+Added Pin To Net: NetName=NetDS1_7 Pin=U1-32
+Added Pin To Net: NetName=NetDS1_3 Pin=U1-33
+Added Pin To Net: NetName=NetDS1_2 Pin=U1-34
+Added Pin To Net: NetName=NetDS1_4 Pin=U1-35
+Added Pin To Net: NetName=NetDS1_5 Pin=U1-36
+Added Pin To Net: NetName=NetDS1_8 Pin=U1-37
+Added Pin To Net: NetName=NetDS1_9 Pin=U1-38
+Added Pin To Net: NetName=NetDS1_10 Pin=U1-39
+Change Net Name : Old Net Name=NetR18_2 New Net Name=NetR10_2
+Added Pin To Net: NetName=NetDS1_1 Pin=DS1-1
+Added Pin To Net: NetName=NetDS1_1 Pin=DS1-6
+Added Pin To Net: NetName=NetDS1_1 Pin=R9-2
+Added Net: Name=NetDS1_1
+Added Room: Name=final_design

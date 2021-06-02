@@ -1,0 +1,64 @@
+Net Status Report
+Filename     : C:\Users\efran\Desktop\Professional Experiment_efran\final_design\PCBµçÂ·Í¼---µ¥²ã°å\final_design\final_design.PcbDoc
+Date         : 2021-05-18
+Time         : 21:22:07
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    +5, Signal Layers Only, 14126.074mils
+    COM, Signal Layers Only, 653.426mils
+    GND, Signal Layers Only, 7218.255mils
+    INT0, Signal Layers Only, 1502.33mils
+    NetC1_2, Signal Layers Only, 949.035mils
+    NetC2_2, Signal Layers Only, 706.819mils
+    NetC3_2, Signal Layers Only, 775.432mils
+    NetR1_1, Signal Layers Only, 333.797mils
+    NetR2_2, Signal Layers Only, 340.245mils
+    NetR3_1, Signal Layers Only, 351.821mils
+    NetR4_1, Signal Layers Only, 364.638mils
+    NetR5_2, Signal Layers Only, 371.63mils
+    NetR6_2, Signal Layers Only, 371.077mils
+    NetR7_2, Signal Layers Only, 370.431mils
+    NetR8_2, Signal Layers Only, 352.737mils
+    NetS10_2, Signal Layers Only, 831.759mils
+    NetS10_4, Signal Layers Only, 467.938mils
+    NetS11_2, Signal Layers Only, 814.415mils
+    NetS11_4, Signal Layers Only, 445.578mils
+    NetS12_2, Signal Layers Only, 798.187mils
+    NetS13_4, Signal Layers Only, 448.963mils
+    NetS14_4, Signal Layers Only, 469.283mils
+    NetS15_4, Signal Layers Only, 452.12mils
+    NetS1_2, Signal Layers Only, 851.553mils
+    NetS1_4, Signal Layers Only, 462.242mils
+    NetS2_2, Signal Layers Only, 855.563mils
+    NetS2_4, Signal Layers Only, 431.461mils
+    NetS3_2, Signal Layers Only, 834.881mils
+    NetS3_4, Signal Layers Only, 458.079mils
+    NetS4_2, Signal Layers Only, 839.725mils
+    NetS5_2, Signal Layers Only, 793.171mils
+    NetS5_4, Signal Layers Only, 455.257mils
+    NetS6_2, Signal Layers Only, 788.906mils
+    NetS6_4, Signal Layers Only, 460.555mils
+    NetS7_2, Signal Layers Only, 803.331mils
+    NetS7_4, Signal Layers Only, 442.974mils
+    NetS8_2, Signal Layers Only, 804.037mils
+    NetS9_2, Signal Layers Only, 836.839mils
+    NetS9_4, Signal Layers Only, 448.49mils
+    NetU1_33, Signal Layers Only, 1282.592mils
+    NetU1_34, Signal Layers Only, 1035.299mils
+    NetU1_35, Signal Layers Only, 827.287mils
+    NetU1_36, Signal Layers Only, 407.907mils
+    NetU1_37, Signal Layers Only, 576.572mils
+    NetU1_38, Signal Layers Only, 843.326mils
+    NetU1_39, Signal Layers Only, 1060.686mils
+    P1.0, Signal Layers Only, 10201.737mils
+    P1.1, Signal Layers Only, 9147.254mils
+    P1.2, Signal Layers Only, 8100.619mils
+    P1.3, Signal Layers Only, 7070.331mils
+    P1.4, Signal Layers Only, 6368.502mils
+    P1.5, Signal Layers Only, 5454.964mils
+    P1.6, Signal Layers Only, 4488.428mils
+    P1.7, Signal Layers Only, 3574.2mils
+    P3.0, Signal Layers Only, 356.436mils
+    P3.1, Signal Layers Only, 352.294mils
+count : 56

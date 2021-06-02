@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=NetR2_2 Pin=S2-1
+Removed Pin From Net: NetName=NetS2_2 Pin=S2-2
+Removed Pin From Net: NetName=NetS1_4 Pin=S2-3
+Removed Pin From Net: NetName=NetS2_4 Pin=S2-4
+Added Component: Designator=S2(Button-4feet)
+Added Pin To Net: NetName=NetR2_2 Pin=S2-1
+Added Pin To Net: NetName=NetS2_2 Pin=S2-2
+Added Pin To Net: NetName=NetS1_4 Pin=S2-3
+Added Pin To Net: NetName=NetS2_4 Pin=S2-4
+Added Room: Name=final_design
